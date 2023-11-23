@@ -67,7 +67,7 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier)
     }
 
     Column(
-        modifier = Modifier,
+        modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
