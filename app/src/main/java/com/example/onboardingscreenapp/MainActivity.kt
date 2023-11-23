@@ -125,7 +125,7 @@ private fun CardContent(name: String) {
                 .weight(1f)
                 .padding(12.dp)
         ) {
-            Text(text = "Hello, ")
+            Text(text = "Ba Ba Black Sheep, ")
             Text(
                 text = name, style = MaterialTheme.typography.headlineMedium.copy(
                     fontWeight = FontWeight.ExtraBold
@@ -133,8 +133,9 @@ private fun CardContent(name: String) {
             )
             if (expanded) {
                 Text(
-                    text = ("Composem ipsum color sit lazy, " +
-                            "padding theme elit, sed do bouncy. ").repeat(4),
+                    text = ("Baa, baa, black sheep\n" +
+                            "Have you any wool?\n" +
+                            "Yes sir, yes sir, three bags full.\n").repeat(4),
                 )
             }
         }
