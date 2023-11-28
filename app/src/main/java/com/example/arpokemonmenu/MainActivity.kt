@@ -36,6 +36,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.arpokemonmenu.ui.theme.ARPokemonMenuTheme
+import com.example.arpokemonmenu.ui.theme.red
 import com.example.arpokemonmenu.ui.theme.translucent
 import com.google.ar.core.Config
 import com.google.ar.core.Session
@@ -97,7 +98,8 @@ fun Menu(modifier: Modifier,
         Pokemon("Pikachu", R.drawable.pikachu, "Pikachu by Tipatat Chennavasin [CC-BY] via Poly Pizza"),
         Pokemon("Low Poly Bulbasaur", R.drawable.pokemonbulbasaur, "Low Poly Bulbasaur by Tipatat Chennavasin [CC-BY] via Poly Pizza"),
         Pokemon("Low Poly Charmander", R.drawable.charmender, "Low Poly Charmander by Tipatat Chennavasin [CC-BY] via Poly Pizza"),
-        Pokemon("Mew", R.drawable.mew, "Mew by Tipatat Chennavasin [CC-BY] via Poly Pizza")
+        Pokemon("Mew", R.drawable.mew, "Mew by Tipatat Chennavasin [CC-BY] via Poly Pizza"),
+        Pokemon("Bellsprout", R.drawable.bellsprout, "")
     )
 
     fun updateIndex(offset: Int) {
@@ -135,7 +137,7 @@ fun CircularImage(
     Box(modifier = modifier
         .size(140.dp)
         .clip(CircleShape)
-//        .border(width = 10.dp, translucent)
+        .border(width = 3.dp, red, CircleShape)
     ) {
         Image(painter = painterResource(id = imageId),
             contentDescription = null,
@@ -193,7 +195,8 @@ fun ARScreen(model : String) {
         )
 
         if (placeModelButton.value) {
-            Button(onClick = {
+            Button(modifier = Modifier.align(Alignment.TopCenter),
+                onClick = {
                 modelNode.value?.anchor
             }) {
                 Text(text = "Place It")
@@ -226,6 +229,6 @@ fun GreetingPreview() {
 @Composable
 fun CircularImagePreview() {
     ARPokemonMenuTheme {
-        CircularImage(imageId = R.drawable.pikachu)
+        CircularImage(imageId = R.drawable.bellsprout)
     }
 }
